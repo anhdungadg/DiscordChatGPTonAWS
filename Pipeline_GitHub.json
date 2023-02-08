@@ -7,7 +7,7 @@
         "BranchName": {
             "Description": "GitHub branch name",
             "Type": "String",
-            "Default": "master"
+            "Default": "main"
         },
         "RepositoryName": {
             "Description": "GitHub repository name",
