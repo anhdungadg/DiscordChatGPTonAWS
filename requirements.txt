@@ -1,5 +1,2 @@
-# Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
-# SPDX-License-Identifier: MIT-0
-
-flask
-boto3
+discord.py==2.1.0
+openai==0.25.0
