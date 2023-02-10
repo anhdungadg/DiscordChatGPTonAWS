@@ -1,3 +1,5 @@
+from flask import Flask, jsonify, request, render_template
+
 from src import bot
 import sys
 
@@ -24,6 +26,12 @@ def check_verion() -> None:
             logger.error(f'{name} version {version} is installed but does not match the requirements')
             sys.exit();
 
+
+@app.route('/')
+def home():
+  return render_template('index.html')
+
 if __name__ == '__main__': 
     check_verion()
     bot.run_discord_bot()
+    app.run(host="0.0.0.0", port=8080)
