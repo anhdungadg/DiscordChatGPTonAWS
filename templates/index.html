@@ -7,55 +7,61 @@
 <head>
     <title>Movie Database API</title>
     <style>
-        body {font-family: Arial, Helvetica, sans-serif;}
-        form {border: 3px solid #f1f1f1;}
-
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        form {
+            border: 3px solid #f1f1f1;
+        }
+        
         .imgcontainer {
             text-align: center;
             margin: 24px 0 12px 0;
         }
-
+        
         img.avatar {
             width: 40%;
             border-radius: 50%;
         }
-
+        
         .container {
             padding: 2px;
         }
-
-	.APIContainer {
-	    padding: 8px;
+        
+        .APIContainer {
+            padding: 8px;
             background-color: #008000;
             width: 5%;
             color: white;
             text-align: center;
-	}
-
+        }
+        
         .sampleContainer {
             padding: auto;
             background-color: #000000;
             color: green;
             text-align: left;
-	}
-
+        }
     </style>
 </head>
+
 <body>
-<h1 align=center>Movie Database API Documentation</h1>
-<div class="container" style="background-color:#0000FF"></div>
-<br>
-<div class="APIContainer"><strong> GET </strong></div>
-<br>
-<div color=black><strong>Endpoint:</strong> /api/movie?year={int}&title={string}</div>
-<br>
-<div><strong> Sample Output: </strong></div>
-<br>
-<div class="sampleContainer">https://{endpoint}/api/movie?year=1933&title=King Kong
-<br>
-<br>
-<div class="sampleContainer">
-<code class=prettyprint> {
+    <h1 align=center>Movie Database API Documentation</h1>
+    <h2 align=center>Thử nghiệm AppRunner. Đỉnh kout! V2</h2>
+    <div class="container" style="background-color:#0000FF"></div>
+    <br>
+    <div class="APIContainer"><strong> GET </strong></div>
+    <br>
+    <div color=black><strong>Endpoint:</strong> /api/movie?year={int}&title={string}</div>
+    <br>
+    <div><strong> Sample Output: </strong></div>
+    <br>
+    <div class="sampleContainer">https://{endpoint}/api/movie?year=1933&title=King Kong
+        <br>
+        <br>
+        <div class="sampleContainer">
+            <code class=prettyprint> {
 	"Item": {
 		"year": 1933,
 		"info": {
@@ -71,25 +77,26 @@
 		},
 		"title": "King Kong"
 	}
-} </code></div>
-</div>
-<br>
-<br>
-<div class="container" style="background-color:#0000FF"></div>
-<br>
-<br>
-<div class="APIContainer"><strong> POST </strong></div>
-<br>
-<br>
-<div color=black><strong>Endpoint:</strong> /api/movie</div>
-<br>
-<br>
-<div><strong> Sample Request: </strong></div>
-<br>
-<div class="sampleContainer">https://{endpoint}/api/movie
-<br>
-<br>
-<code class=prettyprint> 
+} </code>
+        </div>
+    </div>
+    <br>
+    <br>
+    <div class="container" style="background-color:#0000FF"></div>
+    <br>
+    <br>
+    <div class="APIContainer"><strong> POST </strong></div>
+    <br>
+    <br>
+    <div color=black><strong>Endpoint:</strong> /api/movie</div>
+    <br>
+    <br>
+    <div><strong> Sample Request: </strong></div>
+    <br>
+    <div class="sampleContainer">https://{endpoint}/api/movie
+        <br>
+        <br>
+        <code class=prettyprint>
 {
     "year": 1944,
     "title": "King Kong 2",
@@ -101,12 +108,12 @@
     }
 }
 </code>
-</div>
-<br>
-<div><strong> Sample Response: </strong></div>
-<br>
-<div class="sampleContainer">
-<code class=prettyprint> 
+    </div>
+    <br>
+    <div><strong> Sample Response: </strong></div>
+    <br>
+    <div class="sampleContainer">
+        <code class=prettyprint>
 {
     "ResponseMetadata": {
         "HTTPHeaders": {
@@ -123,24 +130,25 @@
         "RetryAttempts": 0
     }
 }
-</code></div>
-<br>
-<br>
-<div class="container" style="background-color:#0000FF"></div>
-<br>
-<br>
-<div class="APIContainer"><strong> PUT </strong></div>
-<br>
-<br>
-<div color=black><strong>Endpoint:</strong> /api/movie</div>
-<br>
-<br>
-<div><strong> Sample Request: </strong></div>
-<br>
-<div class="sampleContainer">https://{endpoint}/api/movie
-<br>
-<br>
-<code class=prettyprint> 
+</code>
+    </div>
+    <br>
+    <br>
+    <div class="container" style="background-color:#0000FF"></div>
+    <br>
+    <br>
+    <div class="APIContainer"><strong> PUT </strong></div>
+    <br>
+    <br>
+    <div color=black><strong>Endpoint:</strong> /api/movie</div>
+    <br>
+    <br>
+    <div><strong> Sample Request: </strong></div>
+    <br>
+    <div class="sampleContainer">https://{endpoint}/api/movie
+        <br>
+        <br>
+        <code class=prettyprint>
 {
     "year": 1944,
     "title": "King Kong 2",
@@ -153,12 +161,12 @@
     }
 }
 </code>
-</div>
-<br>
-<div><strong> Sample Response: </strong></div>
-<br>
-<div class="sampleContainer">
-<code class=prettyprint> 
+    </div>
+    <br>
+    <div><strong> Sample Response: </strong></div>
+    <br>
+    <div class="sampleContainer">
+        <code class=prettyprint>
 {
     "ResponseMetadata": {
         "HTTPHeaders": {
@@ -175,29 +183,31 @@
         "RetryAttempts": 0
     }
 }
-</code></div>
-</div>
-<div class="container" style="background-color:#0000FF"></div>
-<br>
-<div class="APIContainer"><strong> DELETE </strong></div>
-<br>
-<div color=black><strong>Endpoint:</strong> /api/movie?year={int}&title={string}</div>
-<br>
-<div><strong> Sample Output: </strong></div>
-<br>
-<div class="sampleContainer">https://{endpoint}/api/movie?year=1944&title=King Kong 2
-<br>
-<br>
-<div class="sampleContainer">
-<code class=prettyprint> {
+</code>
+    </div>
+    </div>
+    <div class="container" style="background-color:#0000FF"></div>
+    <br>
+    <div class="APIContainer"><strong> DELETE </strong></div>
+    <br>
+    <div color=black><strong>Endpoint:</strong> /api/movie?year={int}&title={string}</div>
+    <br>
+    <div><strong> Sample Output: </strong></div>
+    <br>
+    <div class="sampleContainer">https://{endpoint}/api/movie?year=1944&title=King Kong 2
+        <br>
+        <br>
+        <div class="sampleContainer">
+            <code class=prettyprint> {
 {
     "msg": "Delete successful"
 }
-</code></div>
-</div>
-<br>
-<br>
-<div class="container" style="background-color:#0000FF"></div>
+</code>
+        </div>
+    </div>
+    <br>
+    <br>
+    <div class="container" style="background-color:#0000FF"></div>
 </body>
-</html>
 
+</html>
