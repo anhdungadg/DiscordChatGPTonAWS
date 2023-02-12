@@ -1,9 +1,27 @@
-# Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
-# SPDX-License-Identifier: MIT-0
-FROM public.ecr.aws/amazonlinux/amazonlinux:latest
-RUN yum install python3.12 -y && curl -O https://bootstrap.pypa.io/get-pip.py && python3 get-pip.py && yum update -y
-COPY . /app
-WORKDIR /app
-RUN pip3 install -r requirements.txt
-CMD python3 app.py
-EXPOSE 8080
+FROM node:lts-alpine
+LABEL MAINTAINER Onur YILDIZ <onuryildizsai@gmail.com>
+
+RUN mkdir discordChatGpt
+
+WORKDIR /discordChatGpt
+
+RUN apk update && apk add --no-cache nmap && \
+    echo @edge http://nl.alpinelinux.org/alpine/edge/community >> /etc/apk/repositories && \
+    echo @edge http://nl.alpinelinux.org/alpine/edge/main >> /etc/apk/repositories && \
+    apk update && \
+    apk add --no-cache \
+      chromium \
+      harfbuzz \
+      "freetype>2.8" \
+      ttf-freefont \
+      nss
+
+ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
+
+COPY package.json /discordChatGpt/
+
+RUN npm install
+
+COPY . /discordChatGpt/
+
+CMD ["npm","start"]
