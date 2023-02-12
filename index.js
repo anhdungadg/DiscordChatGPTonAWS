@@ -21,7 +21,7 @@ router.use((req, res, next) => {
 //     res.status(200).send('Ok');
 // });
 router.get('/', (req, res) => {
-    res.status(200).send('Mingalaba');
+    res.status(200).send('Mingalaba\n\n' + process.env.ENVIRONMENT);
 });
 
 app.use('/', router);
