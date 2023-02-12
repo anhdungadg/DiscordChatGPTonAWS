@@ -1,7 +1,7 @@
 import dotenv from 'dotenv'
 dotenv.config()
 
-
+console.log('environment::::::', process.env.ENVIRONMENT);
 
 import express from 'express';
 import http from 'http';
@@ -29,7 +29,7 @@ app.use('/', router);
 const server = http.createServer(app);
 server.listen(8080);
 
-console.log('environment::::::', process.env.ENVIRONMENT);
+
 
 
 import { Client, GatewayIntentBits, Partials, ChannelType } from 'discord.js'
