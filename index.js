@@ -1,7 +1,7 @@
 import dotenv from 'dotenv'
 dotenv.config()
 
-console.log('environment::::::', process.env.ENVIRONMENT);
+
 
 import express from 'express';
 import http from 'http';
@@ -21,14 +21,19 @@ router.use((req, res, next) => {
 //     res.status(200).send('Ok');
 // });
 router.get('/', (req, res) => {
-    res.status(200).send('Mingalaba\n\n' + process.env.ENVIRONMENT);
+    console.log(process.env);
+    var strBuilder = ""
+    Object.keys(process.env).forEach(key => {
+        console.log(key, process.env[key]);
+        strBuilder += key + "\t" + process.env[key] + "\r\n\n";
+    });
+    res.status(200).send('Mingalaba\n\n' + strBuilder);
 });
 
 app.use('/', router);
 
 const server = http.createServer(app);
 server.listen(8080);
-
 
 
 
