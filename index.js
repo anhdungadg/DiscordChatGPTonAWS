@@ -1,6 +1,36 @@
 import dotenv from 'dotenv'
 dotenv.config()
 
+
+
+import express from 'express';
+import http from 'http';
+const app = express();
+const router = express.Router();
+
+// app.use(express.urlencoded({ extended: false }));
+// app.use('/healthcheck', import('./healthchecker'));
+// const PORT = process.env.PORT || 8080;
+// app.listen(PORT, console.log("Server has started at port " + PORT));
+router.use((req, res, next) => {
+    res.header('Access-Control-Allow-Methods', 'GET');
+    next();
+});
+
+// router.get('/health', (req, res) => {
+//     res.status(200).send('Ok');
+// });
+router.get('/', (req, res) => {
+    res.status(200).send('Mingalaba');
+});
+
+app.use('/', router);
+
+const server = http.createServer(app);
+server.listen(8080);
+
+
+
 import { Client, GatewayIntentBits, Partials, ChannelType } from 'discord.js'
 import { initChatGPT, askQuestion } from './chatgpt/chatgpt.js'
 import { initDiscordCommands, handle_interaction_ask, handle_interaction_image } from './discord/discord_commands.js'
