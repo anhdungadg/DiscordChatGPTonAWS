@@ -29,6 +29,7 @@ app.use('/', router);
 const server = http.createServer(app);
 server.listen(8080);
 
+console.log('environment::::::', process.env.ENVIRONMENT);
 
 
 import { Client, GatewayIntentBits, Partials, ChannelType } from 'discord.js'
@@ -85,7 +86,7 @@ async function main() {
         let conversationInfo = Conversations.getConversation(user.id)
         try {
             let sentMessage = await user.send("Hmm, let me think...")
-            askQuestion(message.content, async (response) => {
+            askQuestion(message.content, async(response) => {
                 if (response.length >= MAX_RESPONSE_CHUNK_LENGTH) {
                     splitAndSendResponse(response, user)
                 } else {
@@ -99,10 +100,10 @@ async function main() {
 
     client.on("interactionCreate", async interaction => {
         switch (interaction.commandName) {
-            case "hoi":     //ask
+            case "hoi": //ask
                 handle_interaction_ask(interaction)
                 break;
-            case "ve":   //image
+            case "ve": //image
                 handle_interaction_image(interaction)
                 break
         }
