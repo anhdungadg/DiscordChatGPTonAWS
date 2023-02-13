@@ -1,8 +1,9 @@
-FROM node:lts-alpine
-LABEL MAINTAINER Onur YILDIZ <onuryildizsai@gmail.com>
+# FROM node:lts-alpine
+# LABEL MAINTAINER Onur YILDIZ <onuryildizsai@gmail.com>
 
-# FROM public.ecr.aws/bitnami/node:latest
-# RUN mkdir discordChatGpt
+FROM anhdungadg/nodejs
+
+RUN mkdir discordChatGpt
 
 WORKDIR /discordChatGpt
 
