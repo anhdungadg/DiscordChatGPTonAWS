@@ -160,7 +160,7 @@ Resources:
   AppPipeline:
     Type: 'AWS::CodePipeline::Pipeline'
     Properties:
-      Name: Apprunner-events-pipeline
+      Name: AppRunnerChatBot-events-pipeline
       RoleArn: !GetAtt 
         - CodePipelineServiceRole
         - Arn
