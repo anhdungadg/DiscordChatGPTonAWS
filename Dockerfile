@@ -26,6 +26,6 @@ RUN npm install
 
 COPY . /discordChatGpt/
 
-RUN npm start
+# RUN npm start
 
 CMD ["npm","start"]
